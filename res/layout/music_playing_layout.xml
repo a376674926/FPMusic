@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/music_playing"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/music_playing_name"
+        android:layout_width="fill_parent"
+        android:layout_height="59dp"
+        android:background="@drawable/music_palying_title_bg"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textSize="34.0sp" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/white" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10.0dip"
+            android:text="@string/volume_more"
+            android:textSize="16.0sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10.0dip"
+            android:text="@string/music_pre"
+            android:textSize="16.0sp" />
+
+        <RelativeLayout
+            android:id="@+id/center"
+            android:layout_width="130.dip"
+            android:layout_height="130.dip"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/music_playing_key_bg" >
+
+            <Button
+                android:id="@+id/key_up"
+                android:layout_width="20.0dp"
+                android:layout_height="20.0dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5.0px"
+                android:background="@drawable/key_up_bg"
+                android:focusable="false" />
+
+            <Button
+                android:id="@+id/prev"
+                android:layout_width="20.0dp"
+                android:layout_height="20.0dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5.0px"
+                android:background="@drawable/key_left_bg"
+                android:focusable="false" />
+
+            <Button
+                android:id="@+id/key_center"
+                android:layout_width="18.0dp"
+                android:layout_height="25.0dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/key_center_pause_bg"
+                android:focusable="false" />
+
+            <Button
+                android:id="@+id/key_down"
+                android:layout_width="20.0dp"
+                android:layout_height="20.0dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5.0px"
+                android:background="@drawable/key_down_bg"
+                android:focusable="false" />
+
+            <Button
+                android:id="@+id/next"
+                android:layout_width="20.0dp"
+                android:layout_height="20.0dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5.0px"
+                android:background="@drawable/key_right_bg"
+                android:focusable="false" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:text="@string/music_next"
+            android:textSize="16.0sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10.0dip"
+            android:text="@string/volume_less"
+            android:textSize="16.0sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/next"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/center"
+            android:layout_marginRight="10.0dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/current_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5.0dip"
+                android:textSize="20.0sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5.0dip"
+                android:text="@string/slash"
+                android:textSize="20.0sp" />
+
+            <TextView
+                android:id="@+id/music_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textSize="20.0sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

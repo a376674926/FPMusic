@@ -1,0 +1,52 @@
+/*
+ * Copyright (C) 2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.android.music;
+
+import android.database.Cursor;
+import android.provider.MediaStore;
+import android.widget.AlphabetIndexer;
+
+/**
+ * Handles comparisons in a different way because the Album, Song and Artist name
+ * are stripped of some prefixes such as "a", "an", "the" and some symbols.
+ *
+ */
+class MusicAlphabetIndexer extends AlphabetIndexer {
+
+    public MusicAlphabetIndexer(Cursor cursor, int sortedColumnIndex, CharSequence alphabet) {
+        super(cursor, sortedColumnIndex, alphabet);
+    }
+
+    @Override
+    protected int compare(String word, String letter) {
+        // modify begin by lzy@20150727,for bug:6261
+        // 1.Music list support mixed sorting in Chinese and English.
+        // 2.When move the fast scroll indexer to Chinese don't show the alpha.
+
+        String str = Cn2Spell.CN2FirstCharSpell(word);
+        return str.compareToIgnoreCase(letter);
+
+        /*String wordKey = MediaStore.Audio.keyFor(word);
+        String letterKey = MediaStore.Audio.keyFor(letter);
+        if (wordKey.startsWith(letter)) {
+            return 0;
+        } else {
+            return wordKey.compareTo(letterKey);
+        }*/
+        // modify end.
+    }
+}

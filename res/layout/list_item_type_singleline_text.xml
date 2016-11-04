@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/list_item_height"
+    android:background="@drawable/mms_main_item_bg"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/litst_text"
+        style="@style/mms_main_item_style"
+        android:text="@string/text_add_contact" />
+
+</LinearLayout>
